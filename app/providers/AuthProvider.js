@@ -1,7 +1,7 @@
 "use client";
 
 import { createContext, useCallback, useContext, useEffect, useMemo, useState } from "react";
-import { apiFetch } from "../lib/api";
+import { authClient } from "../lib/authClient";
 
 const AuthContext = createContext(null);
 
@@ -14,13 +14,14 @@ export function AuthProvider({ children }) {
     setLoading(true);
     setError("");
     try {
-      const data = await apiFetch("/auth/me");
+      const { data, error } = await authClient.getSession();
+      if (error) {
+        throw new Error(error.message || "Unable to verify session.");
+      }
       setUser(data?.user || null);
     } catch (err) {
       setUser(null);
-      if (err.status && err.status !== 401) {
-        setError(err.message || "Unable to verify session.");
-      }
+      setError(err.message || "Unable to verify session.");
     } finally {
       setLoading(false);
     }
@@ -32,26 +33,35 @@ export function AuthProvider({ children }) {
 
   const login = useCallback(async ({ email, password }) => {
     setError("");
-    const data = await apiFetch("/auth/login", {
-      method: "POST",
-      body: JSON.stringify({ email, password }),
+    const { data, error } = await authClient.signIn.email({
+      email,
+      password,
     });
+    if (error) {
+      throw new Error(error.message || "Invalid credentials.");
+    }
     setUser(data?.user || null);
     return data;
   }, []);
 
   const register = useCallback(async ({ name, email, photoUrl, password }) => {
     setError("");
-    return apiFetch("/auth/register", {
-      method: "POST",
-      body: JSON.stringify({ name, email, photoUrl, password }),
+    const { data, error } = await authClient.signUp.email({
+      name,
+      email,
+      password,
+      image: photoUrl || undefined,
     });
+    if (error) {
+      throw new Error(error.message || "Registration failed.");
+    }
+    return data;
   }, []);
 
   const logout = useCallback(async () => {
     setError("");
     try {
-      await apiFetch("/auth/logout", { method: "POST" });
+      await authClient.signOut();
     } finally {
       setUser(null);
     }
@@ -59,9 +69,11 @@ export function AuthProvider({ children }) {
 
   const googleLogin = useCallback(async () => {
     setError("");
-    const data = await apiFetch("/auth/google", { method: "POST" });
-    setUser(data?.user || null);
-    return data;
+    await authClient.signIn.social({
+      provider: "google",
+      callbackURL: "/",
+      errorCallbackURL: "/login",
+    });
   }, []);
 
   const value = useMemo(

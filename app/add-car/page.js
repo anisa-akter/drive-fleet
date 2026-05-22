@@ -29,7 +29,7 @@ export default function AddCarPage() {
     setMessage("");
     setError("");
     try {
-      await apiFetch("/cars", {
+      await apiFetch("/add-car", {
         method: "POST",
         body: JSON.stringify({
           ...formData,
