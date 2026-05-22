@@ -62,7 +62,7 @@ export default function MyBookingsPage() {
           ) : null}
           <div className="grid gap-6 md:grid-cols-2">
             {bookings.map((booking) => (
-              <div key={booking.id} className="lux-card rounded-2xl p-6">
+              <div key={booking.id || booking._id} className="lux-card rounded-2xl p-6">
                 <div className="flex items-start justify-between">
                   <div>
                     <p className="text-xs uppercase tracking-[0.2em] text-black/60">{booking.carType}</p>
