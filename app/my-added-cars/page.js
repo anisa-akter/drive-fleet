@@ -19,7 +19,7 @@ export default function MyAddedCarsPage() {
     setLoading(true);
     setError("");
     try {
-      const data = await apiFetch("/cars/mine");
+      const data = await apiFetch("/my-cars");
       setCars(data?.cars || []);
     } catch (err) {
       setError(err.message || "Unable to load your cars.");
@@ -37,7 +37,7 @@ export default function MyAddedCarsPage() {
     const carId = selectedCar.id || selectedCar._id;
     setActionMessage("");
     try {
-      await apiFetch(`/cars/${carId}`, { method: "DELETE" });
+      await apiFetch(`/delete-car/${carId}`, { method: "DELETE" });
       setActionMessage("Car removed successfully.");
       setSelectedCar(null);
       loadCars();

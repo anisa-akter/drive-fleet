@@ -52,8 +52,8 @@ export default function UpdateCarPage() {
     setMessage("");
     setError("");
     try {
-      await apiFetch(`/cars/${id}`, {
-        method: "PATCH",
+      await apiFetch(`/update-car/${id}`, {
+        method: "PUT",
         body: JSON.stringify({
           price: Number(formData.price),
           description: formData.description,

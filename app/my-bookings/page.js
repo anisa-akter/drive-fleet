@@ -30,7 +30,7 @@ export default function MyBookingsPage() {
       setLoading(true);
       setError("");
       try {
-        const data = await apiFetch("/bookings/mine");
+        const data = await apiFetch("/my-bookings");
         if (active) setBookings(data?.bookings || []);
       } catch (err) {
         if (active) setError(err.message || "Unable to load bookings.");
