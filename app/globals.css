@@ -1,0 +1,66 @@
+@import "tailwindcss";
+
+:root {
+  color-scheme: light;
+}
+
+@theme inline {
+  --font-display: var(--font-display);
+  --font-sans: var(--font-sans);
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: var(--font-sans), system-ui, sans-serif;
+  background: #f7f3ee;
+  color: #151313;
+}
+
+.page-shell {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  background-image: radial-gradient(circle at 20% 20%, #f0e7db, transparent 50%),
+    radial-gradient(circle at 80% 0%, #efe2d2, transparent 45%),
+    linear-gradient(180deg, #f7f3ee 0%, #f5efe7 100%);
+}
+
+.section-title {
+  font-family: var(--font-display), serif;
+  letter-spacing: -0.02em;
+}
+
+.lux-card {
+  background: rgba(255, 255, 255, 0.8);
+  border: 1px solid rgba(21, 19, 19, 0.1);
+  box-shadow: 0 20px 60px rgba(20, 19, 19, 0.08);
+  backdrop-filter: blur(12px);
+}
+
+.soft-border {
+  border: 1px solid rgba(21, 19, 19, 0.08);
+}
+
+.btn-drive {
+  background: #121212;
+  color: #f7f3ee;
+  border: 1px solid #121212;
+}
+
+.btn-drive:hover {
+  background: #2c2b2b;
+  border-color: #2c2b2b;
+}
+
+.btn-outline-drive {
+  background: transparent;
+  color: #121212;
+  border: 1px solid rgba(18, 18, 18, 0.6);
+}
+
+.btn-outline-drive:hover {
+  background: rgba(18, 18, 18, 0.08);
+}
