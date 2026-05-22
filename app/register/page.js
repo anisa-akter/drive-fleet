@@ -91,7 +91,9 @@ export default function RegisterPage() {
                 className="input border border-gray-300 rounded-lg mt-2 w-full"
                 placeholder="Your full name"
                 value={formData.name}
-                onChange={(event) => setFormData({ ...formData, name: event.target.value })}
+                onChange={(event) =>
+                  setFormData({ ...formData, name: event.target.value })
+                }
                 required
               />
             </div>
@@ -102,7 +104,9 @@ export default function RegisterPage() {
                 className="input border border-gray-300 rounded-lg mt-2 w-full"
                 placeholder="you@email.com"
                 value={formData.email}
-                onChange={(event) => setFormData({ ...formData, email: event.target.value })}
+                onChange={(event) =>
+                  setFormData({ ...formData, email: event.target.value })
+                }
                 required
               />
             </div>
@@ -113,7 +117,9 @@ export default function RegisterPage() {
                 className="input border border-gray-300 rounded-lg mt-2 w-full"
                 placeholder="https://"
                 value={formData.photoUrl}
-                onChange={(event) => setFormData({ ...formData, photoUrl: event.target.value })}
+                onChange={(event) =>
+                  setFormData({ ...formData, photoUrl: event.target.value })
+                }
               />
             </div>
             <div>
@@ -123,14 +129,22 @@ export default function RegisterPage() {
                 className="input border border-gray-300 rounded-lg mt-2 w-full"
                 placeholder="Create a secure password"
                 value={formData.password}
-                onChange={(event) => setFormData({ ...formData, password: event.target.value })}
+                onChange={(event) =>
+                  setFormData({ ...formData, password: event.target.value })
+                }
                 required
               />
             </div>
-            {passwordError ? <p className="text-sm text-error">{passwordError}</p> : null}
+            {passwordError ? (
+              <p className="text-sm text-error">{passwordError}</p>
+            ) : null}
             {error ? <p className="text-sm text-error">{error}</p> : null}
             {message ? <p className="text-sm text-success">{message}</p> : null}
-            <button type="submit" className="btn btn-drive w-full rounded-full" disabled={loading}>
+            <button
+              type="submit"
+              className="btn btn-drive w-full rounded-full"
+              disabled={loading}
+            >
               {loading ? "Creating account..." : "Register"}
             </button>
           </form>
@@ -143,7 +157,10 @@ export default function RegisterPage() {
             Continue with Google
           </button>
           <p className="mt-6 text-sm text-black/70">
-            Already have an account? <Link className="underline" href="/login">Login</Link>
+            Already have an account?{" "}
+            <Link className="underline" href="/login">
+              Login
+            </Link>
           </p>
         </div>
       </Container>
