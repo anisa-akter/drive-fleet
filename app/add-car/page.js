@@ -74,6 +74,7 @@ export default function AddCarPage() {
                   value={formData.price}
                   onChange={(event) => setFormData({ ...formData, price: event.target.value })}
                   required
+                  
                 />
               </div>
               <div>
