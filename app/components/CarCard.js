@@ -18,12 +18,17 @@ export default function CarCard({ car }) {
             <span>{car.type}</span>
             <span>{car.seats} Seats</span>
           </div>
-          <h3 className="section-title text-xl font-semibold text-black">{car.name}</h3>
+          <h3 className="section-title text-xl font-semibold text-black">
+            {car.name}
+          </h3>
           <p className="text-sm text-black/70">{car.location}</p>
         </div>
         <div className="mt-auto flex items-center justify-between">
           <p className="text-lg font-semibold text-black">${car.price}/day</p>
-          <Link href={`/cars/${carId}`} className="btn px-2 btn-outline-drive btn-sm rounded-full">
+          <Link
+            href={`/cars/${carId}`}
+            className="btn px-2 btn-outline-drive btn-sm rounded-full"
+          >
             View Details
           </Link>
         </div>
