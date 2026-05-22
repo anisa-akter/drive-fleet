@@ -1,6 +1,13 @@
 "use client";
 
-import { createContext, useCallback, useContext, useEffect, useMemo, useState } from "react";
+import {
+  createContext,
+  useCallback,
+  useContext,
+  useEffect,
+  useMemo,
+  useState,
+} from "react";
 import { authClient } from "../lib/authClient";
 
 const AuthContext = createContext(null);
@@ -88,7 +95,16 @@ export function AuthProvider({ children }) {
       refreshSession,
       setError,
     }),
-    [user, loading, error, login, register, logout, googleLogin, refreshSession]
+    [
+      user,
+      loading,
+      error,
+      login,
+      register,
+      logout,
+      googleLogin,
+      refreshSession,
+    ],
   );
 
   return <AuthContext.Provider value={value}>{children}</AuthContext.Provider>;
