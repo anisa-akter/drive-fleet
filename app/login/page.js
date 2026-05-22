@@ -57,7 +57,7 @@ export default function LoginPage() {
               <label className="text-sm font-medium">Email</label>
               <input
                 type="email"
-                className="input input-bordered mt-2 w-full"
+                className="input border border-gray-300 rounded-lg mt-2 w-full"
                 placeholder="you@email.com"
                 value={formData.email}
                 onChange={(event) => setFormData({ ...formData, email: event.target.value })}
@@ -68,7 +68,7 @@ export default function LoginPage() {
               <label className="text-sm font-medium">Password</label>
               <input
                 type="password"
-                className="input input-bordered mt-2 w-full"
+                className="input border border-gray-300 rounded-lg mt-2 w-full"
                 placeholder="Enter your password"
                 value={formData.password}
                 onChange={(event) => setFormData({ ...formData, password: event.target.value })}

@@ -60,7 +60,7 @@ export default function AddCarPage() {
               <div className="md:col-span-2">
                 <label className="text-sm font-medium">Car Name</label>
                 <input
-                  className="input input-bordered mt-2 w-full"
+                  className="input border-gray-300 rounded-lg mt-2 w-full"
                   value={formData.name}
                   onChange={(event) => setFormData({ ...formData, name: event.target.value })}
                   required
@@ -70,7 +70,7 @@ export default function AddCarPage() {
                 <label className="text-sm font-medium">Daily Rent Price</label>
                 <input
                   type="number"
-                  className="input input-bordered mt-2 w-full"
+                  className="input border border-gray-300 rounded-lg mt-2 w-full"
                   value={formData.price}
                   onChange={(event) => setFormData({ ...formData, price: event.target.value })}
                   required
@@ -95,7 +95,7 @@ export default function AddCarPage() {
                 <label className="text-sm font-medium">Image URL</label>
                 <input
                   type="url"
-                  className="input input-bordered mt-2 w-full"
+                  className="input border border-gray-300 rounded-lg mt-2 w-full"
                   value={formData.imageUrl}
                   onChange={(event) => setFormData({ ...formData, imageUrl: event.target.value })}
                   required
@@ -105,7 +105,7 @@ export default function AddCarPage() {
                 <label className="text-sm font-medium">Seat Capacity</label>
                 <input
                   type="number"
-                  className="input input-bordered mt-2 w-full"
+                  className="input border border-gray-300 rounded-lg mt-2 w-full"
                   value={formData.seats}
                   onChange={(event) => setFormData({ ...formData, seats: event.target.value })}
                   required
@@ -114,7 +114,7 @@ export default function AddCarPage() {
               <div>
                 <label className="text-sm font-medium">Pickup Location</label>
                 <input
-                  className="input input-bordered mt-2 w-full"
+                  className="input border border-gray-300 rounded-lg mt-2 w-full"
                   value={formData.location}
                   onChange={(event) => setFormData({ ...formData, location: event.target.value })}
                   required

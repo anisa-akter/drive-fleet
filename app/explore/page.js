@@ -57,7 +57,7 @@ export default function ExplorePage() {
           <input
             type="text"
             placeholder="Search by car name"
-            className="input input-bordered w-full md:max-w-sm"
+            className="input border border-gray-300 rounded-lg w-full md:max-w-sm"
             value={search}
             onChange={(event) => setSearch(event.target.value)}
           />

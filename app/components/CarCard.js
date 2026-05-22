@@ -23,7 +23,7 @@ export default function CarCard({ car }) {
         </div>
         <div className="mt-auto flex items-center justify-between">
           <p className="text-lg font-semibold text-black">${car.price}/day</p>
-          <Link href={`/cars/${carId}`} className="btn btn-outline-drive btn-sm rounded-full">
+          <Link href={`/cars/${carId}`} className="btn px-2 btn-outline-drive btn-sm rounded-full">
             View Details
           </Link>
         </div>

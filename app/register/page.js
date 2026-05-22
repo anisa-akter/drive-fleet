@@ -88,7 +88,7 @@ export default function RegisterPage() {
               <label className="text-sm font-medium">Name</label>
               <input
                 type="text"
-                className="input input-bordered mt-2 w-full"
+                className="input border border-gray-300 rounded-lg mt-2 w-full"
                 placeholder="Your full name"
                 value={formData.name}
                 onChange={(event) => setFormData({ ...formData, name: event.target.value })}
@@ -99,7 +99,7 @@ export default function RegisterPage() {
               <label className="text-sm font-medium">Email</label>
               <input
                 type="email"
-                className="input input-bordered mt-2 w-full"
+                className="input border border-gray-300 rounded-lg mt-2 w-full"
                 placeholder="you@email.com"
                 value={formData.email}
                 onChange={(event) => setFormData({ ...formData, email: event.target.value })}
@@ -110,7 +110,7 @@ export default function RegisterPage() {
               <label className="text-sm font-medium">Photo URL</label>
               <input
                 type="url"
-                className="input input-bordered mt-2 w-full"
+                className="input border border-gray-300 rounded-lg mt-2 w-full"
                 placeholder="https://"
                 value={formData.photoUrl}
                 onChange={(event) => setFormData({ ...formData, photoUrl: event.target.value })}
@@ -120,7 +120,7 @@ export default function RegisterPage() {
               <label className="text-sm font-medium">Password</label>
               <input
                 type="password"
-                className="input input-bordered mt-2 w-full"
+                className="input border border-gray-300 rounded-lg mt-2 w-full"
                 placeholder="Create a secure password"
                 value={formData.password}
                 onChange={(event) => setFormData({ ...formData, password: event.target.value })}

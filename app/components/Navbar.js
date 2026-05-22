@@ -52,7 +52,7 @@ export default function Navbar() {
                     <img src={user.photoUrl} alt={user.name || "Profile"} />
                   ) : null}
                 </span>
-                <span className="hidden sm:inline">{user.name || "Account"}</span>
+                <span className="hidden sm:inline px-2">{user.name || "Account"}</span>
               </label>
               <ul tabIndex={0} className="menu dropdown-content mt-3 w-52 rounded-box bg-white p-2 shadow">
                 <li><Link href="/add-car">Add Car</Link></li>
@@ -65,7 +65,7 @@ export default function Navbar() {
             </div>
           ) : (
             <div className="flex items-center gap-2">
-              <Link href="/login" className="btn btn-drive btn-sm rounded-full">
+              <Link href="/login" className="btn btn-drive btn-sm rounded-full px-2">
                 Login
               </Link>
             </div>

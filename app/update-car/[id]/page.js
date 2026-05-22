@@ -81,13 +81,13 @@ export default function UpdateCarPage() {
               <form className="mt-6 grid gap-4 md:grid-cols-2" onSubmit={handleSubmit}>
                 <div className="md:col-span-2">
                   <label className="text-sm font-medium">Car Name</label>
-                  <input className="input input-bordered mt-2 w-full" value={formData.name} disabled />
+                  <input className="input border border-gray-300 rounded-lg mt-2 w-full" value={formData.name} disabled />
                 </div>
                 <div>
                   <label className="text-sm font-medium">Price</label>
                   <input
                     type="number"
-                    className="input input-bordered mt-2 w-full"
+                    className="input border border-gray-300 rounded-lg mt-2 w-full"
                     value={formData.price}
                     onChange={(event) => setFormData({ ...formData, price: event.target.value })}
                     required
@@ -112,7 +112,7 @@ export default function UpdateCarPage() {
                   <label className="text-sm font-medium">Image URL</label>
                   <input
                     type="url"
-                    className="input input-bordered mt-2 w-full"
+                    className="input border border-gray-300 rounded-lg mt-2 w-full"
                     value={formData.imageUrl}
                     onChange={(event) => setFormData({ ...formData, imageUrl: event.target.value })}
                     required
@@ -121,7 +121,7 @@ export default function UpdateCarPage() {
                 <div>
                   <label className="text-sm font-medium">Location</label>
                   <input
-                    className="input input-bordered mt-2 w-full"
+                    className="input border border-gray-300 rounded-lg mt-2 w-full"
                     value={formData.location}
                     onChange={(event) => setFormData({ ...formData, location: event.target.value })}
                     required
